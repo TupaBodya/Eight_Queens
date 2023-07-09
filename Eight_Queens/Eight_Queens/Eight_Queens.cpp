@@ -1,27 +1,29 @@
 #include "stdafx.h"
 #include <iostream>
-#include <vector>
 #include <locale>
 
 using namespace std;
 
-bool canPlaceQueen(vector<int>& chessboard, int row, int column) {
+bool canPlaceQueen(int chessboard[8][8], int row, int column) {
 	setlocale (LC_ALL, "Rus");
+    // Проверяем, нет ли других ферзей по вертикали и диагоналям
     for (int i = 0; i < row; i++) {
-        if (chessboard[i] == column || chessboard[i] - column == i - row || chessboard[i] - column == row - i) {
+        if (chessboard[i][column] || 
+            (column-row+i >= 0 && chessboard[i][column-row+i]) ||
+            (column+row-i < 8 && chessboard[i][column+row-i])) {
             return false;
         }
     }
     return true;
 }
 
-void solveEightQueens(vector<int>& chessboard, int row, int n, int& count) {
-    if (row == n) {
+void solveEightQueens(int chessboard[8][8], int row, int& count) {
+    if (row == 8) {
         count++;
         cout << "Решение #" << count << ":" << endl;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (chessboard[i] == j) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (chessboard[i][j]) {
                     cout << "Ф ";
                 } else {
                     cout << "- ";
@@ -33,23 +35,23 @@ void solveEightQueens(vector<int>& chessboard, int row, int n, int& count) {
         return;
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < 8; i++) {
         if (canPlaceQueen(chessboard, row, i)) {
-            chessboard[row] = i;
-            solveEightQueens(chessboard, row + 1, n, count);
+            chessboard[row][i] = 1;  // размещаем ферзя на доске
+            solveEightQueens(chessboard, row + 1, count);  // рекурсивно переходим к следующей строке
+            chessboard[row][i] = 0;  // удаляем ферзя, чтобы найти другую возможную позицию
         }
     }
 }
 
 int main() {
-    int n = 8;
     int count = 0;
-    vector<int> chessboard(n);
+    int chessboard[8][8] = {0};
     
-    solveEightQueens(chessboard, 0, n, count);
+    solveEightQueens(chessboard, 0, count);
     
     cout << "Общее количество решений: " << count << endl;
 
-	system ("pause");
+	system("pause");
     return 0;
 }

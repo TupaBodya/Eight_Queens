@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F66A47BE-8DCC-461B-A3EF-54DD54BD30F9}</ProjectGuid>
+    <ProjectGuid>{30045274-5231-4BB0-94D0-9015B36A2F90}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Eight_Queens</RootNamespace>
   </PropertyGroup>
