@@ -1,0 +1,11 @@
+﻿Построение начато 09.07.2023 14:10:48.
+     1>Проект "C:\Users\TupaBodya\Desktop\Eight_Queens\Eight_Queens\Eight_Queens.vcxproj" в узле 2 (целевые объекты Build).
+     1>Link:
+         D:\VStd\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\TupaBodya\Desktop\Eight_Queens\Debug\Eight_Queens.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\TupaBodya\Desktop\Eight_Queens\Debug\Eight_Queens.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\TupaBodya\Desktop\Eight_Queens\Debug\Eight_Queens.lib" /MACHINE:X86 Debug\Eight_Queens.obj
+         Debug\stdafx.obj
+         Eight_Queens.vcxproj -> C:\Users\TupaBodya\Desktop\Eight_Queens\Debug\Eight_Queens.exe
+     1>Построение проекта "C:\Users\TupaBodya\Desktop\Eight_Queens\Eight_Queens\Eight_Queens.vcxproj" завершено (целевые объекты Build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:00.22
